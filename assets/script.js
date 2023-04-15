@@ -11,7 +11,7 @@ document.body.append(startBUTT);
 document.body.setAttribute('style','text-align: center;'); 
 const TimerEL = document.createElement("h2");
 document.body.append(TimerEL);
-let score = 0
+
 let timerInterval;
 let input;
 let h2;
@@ -107,7 +107,7 @@ function Question1() {
 
         if (i ===1) {
             button.addEventListener("click", function(){
-                score+=20;
+                
                 sections[0].style.display = "none";
                 Correct();
                 Question2();
@@ -135,7 +135,7 @@ function Question2() {
     
         if (i ===2) {
             button.addEventListener("click", function(){
-                score+=20;
+               
                 sections[1].style.display = "none";
                 Correct();
                 Question3();
@@ -163,7 +163,7 @@ function Question3() {
         
         if (i ===3) {
             button.addEventListener("click", function(){
-                score+=20;
+              
                 sections[2].style.display = "none";
                 Correct();
                 Question4();
@@ -191,7 +191,7 @@ function Question4() {
             
         if (i ===2) {
             button.addEventListener("click", function(){
-                score+=20;
+                
                 sections[3].style.display = "none";
                 Correct();
                 Question5();
@@ -219,7 +219,7 @@ function Question5() {
                 
         if (i ===3) {
               button.addEventListener("click", function(){
-                 score+=20;
+              
                 sections[4].style.display = "none";
                 Correct();
                 Alldone();                               
@@ -243,9 +243,14 @@ function Question5() {
         document.body.append(h2);
         h2.textContent = "All Done!"
 
+       
+        if (Timer <=0) {
+            Timer =0;
+        };
+
         pEL1 = document.createElement("p");
         document.body.append(pEL1);
-        pEL1.textContent = "Your score is " + score +"."
+        pEL1.textContent = "Your score is " + Timer +"."
 
         labelEL = document.createElement("label");
         document.body.append(labelEL);
@@ -280,7 +285,7 @@ function Question5() {
         document.body.append(rankingUL);
         const rankingLI = document.createElement("li");
         rankingUL.append(rankingLI);
-        rankingLI.textContent = input.value + " - " + score;
+        rankingLI.textContent = input.value + " - " + Timer;
         localStorage.setItem("ranking", rankingLI.textContent);
 
         const againEL = document.createElement("button");
@@ -297,3 +302,4 @@ function Question5() {
             rankingLI.style.display = "none";
         })
     }
+     
