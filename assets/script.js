@@ -1,4 +1,3 @@
-
 //start button
 //set timer
 //first to fifth question
@@ -76,7 +75,7 @@ function start() {
         Timer--;
         TimerEL.textContent = Timer;
 
-        if (Timer === 0) {
+        if (Timer <= 0) {
             clearInterval(timerInterval);
             TimerEL.style.display= "none";
             sections[0].style.display = "none";
@@ -298,6 +297,3 @@ function Question5() {
             rankingLI.style.display = "none";
         })
     }
-
-  
-
